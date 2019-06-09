@@ -1,0 +1,26 @@
+.menu {
+    background-color: white;
+}
+
+.logo {
+    font-family: 'Lobster Two', 'Lucida Calligraphy', cursive;
+    font-size: 40px;
+}
+
+#searchBar:focus, #searchBarPrepend:focus, button:focus {
+    border-color: lightgray;
+    box-shadow: none;
+    outline: 0;
+}
+
+#searchBar {
+    width: 300px;
+}
+
+#searchBarPrepend {
+    border-color: lightgray;
+}
+
+.fa-caret-down{
+    font-size: 40px;
+}
