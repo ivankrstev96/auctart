@@ -4,10 +4,13 @@ import com.auctart.domain.Image;
 import com.auctart.repository.ImageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Optional;
 
 @Service
 public class ImageService {
@@ -15,7 +18,7 @@ public class ImageService {
     private final ImageRepository repository;
     private final Logger logger = LoggerFactory.getLogger(ImageService.class);
 
-    ImageService(ImageRepository repository){
+    public ImageService(ImageRepository repository){
         this.repository = repository;
     }
 
@@ -28,5 +31,10 @@ public class ImageService {
         Image image = new Image(file.getName(), bytes, file.getContentType(), file.getSize());
         logger.info("Image saved");
         repository.save(image);
+    }
+
+    public Optional<Byte[]> findImage(Long id) {
+        return this.repository.findById(id)
+                .map(Image::getBytes);
     }
 }

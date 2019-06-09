@@ -8,7 +8,7 @@ public class BidService {
 
     private final BidRepository repository;
 
-    BidService(BidRepository repository){
+    public BidService(BidRepository repository){
         this.repository = repository;
     }
 }

@@ -1,24 +1,22 @@
 package com.auctart.web;
 
 import com.auctart.service.ImageService;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.rmi.server.ExportException;
+import java.io.OutputStream;
 
 @Controller
 @RequestMapping("api/image")
 public class ImageController {
     private final ImageService service;
 
-    ImageController(ImageService service){
+    public ImageController(ImageService service){
         this.service = service;
     }
 
@@ -32,5 +30,22 @@ public class ImageController {
         catch (Exception e){
             return ResponseEntity.badRequest().build();
         }
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Byte[]> findImage(@PathVariable(name = "id") Long id, HttpServletResponse response){
+        return this.service.findImage(id)
+                .map(x -> {
+                    try {
+                        OutputStream os = response.getOutputStream();
+                        for (byte b: x) {
+                            os.write(b);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    return ResponseEntity.ok(x);
+                })
+                .orElse(ResponseEntity.badRequest().build());
     }
 }

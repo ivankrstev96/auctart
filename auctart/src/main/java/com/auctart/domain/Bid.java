@@ -8,18 +8,20 @@ public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user")
-    User user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "auction")
-    Auction auction;
+    private Auction auction;
 
     @Column(name = "price")
-    Integer price;
+    private Integer price;
+
+    public Bid(){ }
 
     public Bid(User user, Auction auction, Integer price) {
         this.user = user;

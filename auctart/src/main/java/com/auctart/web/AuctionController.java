@@ -10,7 +10,7 @@ public class AuctionController {
 
     private final AuctionService service;
 
-    AuctionController(AuctionService service){
+    public AuctionController(AuctionService service){
         this.service = service;
     }
 }

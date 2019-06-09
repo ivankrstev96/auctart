@@ -8,19 +8,21 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "bytes")
-    Byte[] bytes;
+    private Byte[] bytes;
 
     @Column(name = "type")
-    String type;
+    private String type;
 
     @Column(name = "size")
-    Long size;
+    private Long size;
+
+    public Image() { }
 
     public Image(String name, Byte[] bytes, String type, Long size) {
         this.name = name;

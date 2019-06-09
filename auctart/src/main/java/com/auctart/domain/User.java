@@ -8,20 +8,22 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "username")
-    String userName;
+    private String userName;
 
     @Column(name = "password")
-    String password;
+    private String password;
 
     @Column(name = "email")
-    String email;
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "image")
-    Image image;
+    private Image image;
+
+    public User() { }
 
     public User(String userName, String password, String email, Image image) {
         this.userName = userName;

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class AuctionService {
     private final AuctionRepository repository;
 
-    AuctionService(AuctionRepository repository){
+    public AuctionService(AuctionRepository repository){
         this.repository = repository;
     }
 }

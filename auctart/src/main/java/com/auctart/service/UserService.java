@@ -8,7 +8,7 @@ public class UserService {
 
     private final UserRepository repository;
 
-    UserService(UserRepository repository){
+    public UserService(UserRepository repository){
         this.repository = repository;
     }
 }

@@ -10,7 +10,7 @@ public class BidController {
 
     private final BidService service;
 
-    BidController(BidService service){
+    public BidController(BidService service){
         this.service = service;
     }
 }

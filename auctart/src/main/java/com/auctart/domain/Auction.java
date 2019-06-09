@@ -9,26 +9,28 @@ public class Auction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "auction")
-    String name;
+    private String name;
 
     @Column(name = "author")
-    String author;
+    private String author;
 
     @Column(name = "start_date")
-    LocalDateTime startDate;
+    private LocalDateTime startDate;
 
     @Column(name = "end_date")
-    LocalDateTime endDate;
+    private LocalDateTime endDate;
 
     @Column(name = "start_price")
-    Integer startPrice;
+    private Integer startPrice;
 
     @ManyToOne
     @JoinColumn(name = "user")
-    User user;
+    private User user;
+
+    public Auction() { }
 
     public Auction(String name, String author, LocalDateTime startDate,
                    LocalDateTime endDate, Integer startPrice, User user) {
