@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "image")
 public class Image {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Long id;
 
@@ -19,10 +19,14 @@ public class Image {
     @Column(name = "type")
     String type;
 
-    public Image(String name, Byte[] bytes, String type) {
+    @Column(name = "size")
+    Long size;
+
+    public Image(String name, Byte[] bytes, String type, Long size) {
         this.name = name;
         this.bytes = bytes;
         this.type = type;
+        this.size = size;
     }
 
     public Long getId() {
@@ -55,5 +59,13 @@ public class Image {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
     }
 }

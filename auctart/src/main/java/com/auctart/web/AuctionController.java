@@ -1,10 +1,11 @@
 package com.auctart.web;
 
-import com.auctart.domain.Auction;
 import com.auctart.service.AuctionService;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController("api/auction")
+@Controller
+@RequestMapping("api/auction")
 public class AuctionController {
 
     private final AuctionService service;
