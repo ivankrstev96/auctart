@@ -24,3 +24,7 @@
 .fa-caret-down{
     font-size: 40px;
 }
+
+.hide-menu {
+    display:none;
+}

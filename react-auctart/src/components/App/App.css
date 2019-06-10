@@ -1,3 +1,7 @@
 #global {
     font-family: 'Roboto', sans-serif;
 }
+
+.hide-menu {
+    display: none;
+}
