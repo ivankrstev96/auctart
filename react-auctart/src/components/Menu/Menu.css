@@ -1,5 +1,7 @@
-.menu {
+.menu{
     background-color: white;
+    position: absolute;
+    z-index:999;
 }
 
 .logo {

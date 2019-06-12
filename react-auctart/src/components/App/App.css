@@ -2,6 +2,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.hide-menu {
-    display: none;
+.menu {
+    position: fixed;
+}
+.intro {
+    position:absolute;
 }

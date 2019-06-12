@@ -6,12 +6,14 @@ div#main {
 
     width:100%;
     height:100%;
-    position: absolute;
-    overflow:hidden;
+    position: fixed;
+    overflow: hidden;
+
+
 }
 
 #explore-link {
-    position: absolute;
+    position: fixed;
     font-size: 70px;
     bottom: 10vh;
     right: 10vw;

@@ -5,11 +5,12 @@ import Menu from "../Menu/Menu.js";
 import Intro from "../Intro/Intro";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Auctions from "../Auctions/Auctions";
+import LogIn from "../LogIn/LogIn";
+import Register from "../Register/Register";
 
 
 
 class App extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -30,9 +31,13 @@ class App extends Component {
         return (
             <div id="global">
                 <Router>
+                    <Menu/>
                     <Switch>
-                        <Route path="/Intro" exact component={Intro} />
+                        <Route path="/" exact component={Intro} />
                         <Route path="/Auctions" component={Auctions} />
+                        <Route path="/LogIn" component={LogIn} />
+                        <Route path="/Register" component={Register} />
+
                     </Switch>
                 </Router>
             </div>
