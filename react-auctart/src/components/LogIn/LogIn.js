@@ -2,13 +2,38 @@ import React from 'react';
 import './LogIn.css';
 import '../../assets/css/fonts.css';
 import {Link} from "react-router-dom";
+import {withAuthContext} from "../../context/AuthContext";
 
 class LogIn extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+
+        console.log(props);
+        this.state = {username: "", password: ""};
     }
+
+    login = (event) => {
+        event.preventDefault();
+
+        const user = {
+            username: this.state.username,
+            password: this.state.password
+        };
+        this.props.login(user);
+    }
+
+    onUsernameChange = (event) => {
+        this.setState({
+            username: event.target.value
+        });
+    };
+
+    onPasswordChange = (event) => {
+        this.setState({
+            password: event.target.value
+        });
+    };
 
     render() {
         return (
@@ -16,11 +41,11 @@ class LogIn extends React.Component {
                 <div className="row">
                     <div className="card col-md-10 col-lg-6 mx-auto">
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={this.login}>
                                 <input type="text" className="form-control my-3" id="inputUsername"
-                                       placeholder="Username"/>
+                                       placeholder="Username" onChange={this.onUsernameChange}/>
                                 <input type="password" className="form-control my-3" id="inputPassword"
-                                       placeholder="Password"/>
+                                       placeholder="Password" onChange={this.onPasswordChange}/>
                                 <div className="form-check my-2">
                                     <input className="form-check-input" type="checkbox" value="" id="checkStayLogged"/>
                                     <label className="form-check-label" htmlFor="checkStayLogged">
@@ -38,5 +63,4 @@ class LogIn extends React.Component {
     }
 }
 
-
-export default LogIn;
+export default withAuthContext(LogIn);

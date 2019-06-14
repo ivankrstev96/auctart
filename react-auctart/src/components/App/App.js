@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Auctions from "../Auctions/Auctions";
 import LogIn from "../LogIn/LogIn";
 import Register from "../Register/Register";
+import {AuthProvider} from "../../context/AuthContext";
 
 
 
@@ -30,16 +31,18 @@ class App extends Component {
 
         return (
             <div id="global">
-                <Router>
-                    <Menu/>
-                    <Switch>
-                        <Route path="/" exact component={Intro} />
-                        <Route path="/Auctions" component={Auctions} />
-                        <Route path="/LogIn" component={LogIn} />
-                        <Route path="/Register" component={Register} />
+                <AuthProvider>
+                    <Router>
+                        <Menu/>
+                        <Switch>
+                            <Route path="/" exact component={Intro} />
+                            <Route path="/Auctions" component={Auctions} />
+                            <Route path="/LogIn" component={LogIn} />
+                            <Route path="/Register" component={Register} />
 
-                    </Switch>
-                </Router>
+                        </Switch>
+                    </Router>
+                </AuthProvider>
             </div>
 
         );
