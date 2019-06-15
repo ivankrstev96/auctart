@@ -1,10 +1,10 @@
 import React from 'react';
-import './LogIn.css';
+import './Login.css';
 import '../../assets/css/fonts.css';
 import {Link} from "react-router-dom";
 import {withAuthContext} from "../../context/AuthContext";
 
-class LogIn extends React.Component {
+class Login extends React.Component {
 
     constructor(props) {
         super(props);
@@ -63,4 +63,4 @@ class LogIn extends React.Component {
     }
 }
 
-export default withAuthContext(LogIn);
+export default withAuthContext(Login);

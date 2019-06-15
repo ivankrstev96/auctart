@@ -5,7 +5,7 @@ import Menu from "../Menu/Menu.js";
 import Intro from "../Intro/Intro";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Auctions from "../Auctions/Auctions";
-import LogIn from "../LogIn/LogIn";
+import Login from "../Login/Login";
 import Register from "../Register/Register";
 import {AuthProvider} from "../../context/AuthContext";
 
@@ -37,7 +37,7 @@ class App extends Component {
                         <Switch>
                             <Route path="/" exact component={Intro} />
                             <Route path="/Auctions" component={Auctions} />
-                            <Route path="/LogIn" component={LogIn} />
+                            <Route path="/Login" component={Login} />
                             <Route path="/Register" component={Register} />
 
                         </Switch>

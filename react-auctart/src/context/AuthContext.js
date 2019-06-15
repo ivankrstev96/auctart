@@ -1,5 +1,6 @@
 import React from "react";
 import {authenticateUser} from "../service/userService";
+import {clearAccessToken, getAccessToken, setAccessToken} from "../service/browserStorageService";
 
 
 const state = {
@@ -34,14 +35,18 @@ export class AuthProvider extends React.Component {
 
     login(user) {
         authenticateUser(user).then(response => {
-
+            console.log(response);
+            const bearer = response.headers.authorization;
+            setAccessToken(bearer);
         });
     }
 
     logout() {
+        clearAccessToken();
     }
 
     isAuthenticated() {
+        return !!getAccessToken();
     }
 
     getLoggedInUser() {
