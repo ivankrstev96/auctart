@@ -8,8 +8,7 @@ const state = {
     },
     logout: () => {
     },
-    isAuthenticated: () => {
-    },
+    isAuthenticated: false,
     loggedInUser: null
 };
 
@@ -21,10 +20,10 @@ export class AuthProvider extends React.Component {
         this.state = {
             login: this.login,
             logout: this.logout,
-            isAuthenticated: this.isAuthenticated,
+            isAuthenticated: !!getAccessToken(),
             loggedInUser: null
         };
-        if(this.isAuthenticated()){
+        if(this.state.isAuthenticated){
             getAuthenticatedUser().then(response => {
                this.setState({
                    loggedInUser: response.data
@@ -45,20 +44,24 @@ export class AuthProvider extends React.Component {
         authenticateUser(user).then(response => {
             const bearer = response.headers.authorization;
             setAccessToken(bearer);
+            this.setState({
+               isAuthenticated: true
+            });
             getAuthenticatedUser().then(userResponse => {
                 this.setState({
                     loggedInUser: userResponse.data
                 });
             });
+        }).catch(reason => {
+            console.log(reason);
         });
     };
 
-    logout() {
+    logout = () => {
         clearAccessToken();
-    }
-
-    isAuthenticated() {
-        return !!getAccessToken();
+        this.setState({
+            isAuthenticated: false
+        });
     }
 }
 
