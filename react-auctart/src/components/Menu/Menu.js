@@ -37,7 +37,7 @@ class Menu extends React.Component {
                     </ul>
 
                     <form className="form-inline my-2 float-right">
-                        <Link to="/LogIn" className="btn btn-outline-secondary mr-2 px-4 log-in-btn">Log in</Link>
+                        <Link to="/Login" className="btn btn-outline-secondary mr-2 px-4 log-in-btn">Log in</Link>
                         <Link to="/Register" className="btn btn-outline-secondary register-btn px-3">Register</Link>
                     </form>
                 </div>

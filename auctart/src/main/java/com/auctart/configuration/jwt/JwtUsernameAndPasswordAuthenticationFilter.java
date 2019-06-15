@@ -63,7 +63,7 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
 
-        User account = (User) auth.getPrincipal();
+        User user = (User)auth.getPrincipal();
 
         Long now = System.currentTimeMillis();
         String token = Jwts.builder()

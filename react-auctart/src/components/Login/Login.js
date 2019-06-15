@@ -8,8 +8,6 @@ class Login extends React.Component {
 
     constructor(props) {
         super(props);
-
-        console.log(props);
         this.state = {username: "", password: ""};
     }
 
@@ -21,7 +19,7 @@ class Login extends React.Component {
             password: this.state.password
         };
         this.props.login(user);
-    }
+    };
 
     onUsernameChange = (event) => {
         this.setState({
@@ -34,6 +32,7 @@ class Login extends React.Component {
             password: event.target.value
         });
     };
+
 
     render() {
         return (

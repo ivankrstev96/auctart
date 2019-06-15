@@ -21,14 +21,6 @@ class App extends Component {
     }
 
     render() {
-        var currentLocation = window.location.pathname;
-        console.log(currentLocation);
-
-        let conditionalMenu;
-        if(currentLocation !== '/Intro') {
-            conditionalMenu = <Menu/>;
-        }
-
         return (
             <div id="global">
                 <AuthProvider>
@@ -39,12 +31,10 @@ class App extends Component {
                             <Route path="/Auctions" component={Auctions} />
                             <Route path="/Login" component={Login} />
                             <Route path="/Register" component={Register} />
-
                         </Switch>
                     </Router>
                 </AuthProvider>
             </div>
-
         );
     }
 }

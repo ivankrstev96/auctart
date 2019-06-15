@@ -1,6 +1,11 @@
 import axios from "./http";
 
-const apiUri = "/auth";
-export const authenticateUser = (user) => {
-    return axios.post(apiUri, user, {withCredentials: true});
+const apiUri = "/api/user";
+
+export const getUserByUsername = (userName) => {
+    return axios.get(`${apiUri}/${userName}`);
 };
+
+export const getAuthenticatedUser = () => {
+    return axios.get(`${apiUri}/current`)
+}

@@ -1,13 +1,16 @@
 import React from "react";
-import {authenticateUser} from "../service/userService";
+import {authenticateUser} from "../service/authService";
 import {clearAccessToken, getAccessToken, setAccessToken} from "../service/browserStorageService";
-
+import {getAuthenticatedUser, getUserByUsername} from "../service/userService";
 
 const state = {
-    login: () => {},
-    logout: () => {},
-    isAuthenticated: () => {},
-    getLoggedInUser: () => {}
+    login: () => {
+    },
+    logout: () => {
+    },
+    isAuthenticated: () => {
+    },
+    loggedInUser: null
 };
 
 const AuthContext = React.createContext(state);
@@ -15,14 +18,19 @@ const AuthContext = React.createContext(state);
 export class AuthProvider extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             login: this.login,
             logout: this.logout,
             isAuthenticated: this.isAuthenticated,
-            getLoggedInUser: this.getLoggedInUser
+            loggedInUser: null
         };
-
+        if(this.isAuthenticated()){
+            getAuthenticatedUser().then(response => {
+               this.setState({
+                   loggedInUser: response.data
+               });
+            });
+        }
     }
 
     render() {
@@ -33,13 +41,17 @@ export class AuthProvider extends React.Component {
         );
     }
 
-    login(user) {
+    login = (user) => {
         authenticateUser(user).then(response => {
-            console.log(response);
             const bearer = response.headers.authorization;
             setAccessToken(bearer);
+            getAuthenticatedUser().then(userResponse => {
+                this.setState({
+                    loggedInUser: userResponse.data
+                });
+            });
         });
-    }
+    };
 
     logout() {
         clearAccessToken();
@@ -48,16 +60,11 @@ export class AuthProvider extends React.Component {
     isAuthenticated() {
         return !!getAccessToken();
     }
-
-    getLoggedInUser() {
-    }
 }
 
 export const AuthConsumer = AuthContext.Consumer;
 
 export const withAuthContext = (Component) => {
-
-    console.log("called");
     return (topLevelProps) => (
         <AuthConsumer>
             {(authProps) => {

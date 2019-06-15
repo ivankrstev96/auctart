@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import axios from "axios";
 import {clearAccessToken, getAccessToken} from "./browserStorageService";
 
 const authenticationInterceptor = (config) => {
