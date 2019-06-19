@@ -2,13 +2,48 @@ import React from 'react';
 import './Register.css';
 import '../../assets/css/fonts.css';
 import {Link} from "react-router-dom";
+import {registerUser} from "../../service/userService";
 
 class Register extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            username: "",
+            password: "",
+            email: "",
+            confirmPassword: ""
+        }
     }
+
+
+    onUsernameChange = (event) => {
+        this.setState({
+            username: event.target.value
+        });
+    };
+
+    onPasswordChange = (event) => {
+        this.setState({
+            password: event.target.value
+        });
+    };
+
+    onEmailChange = (event) => {
+        this.setState({
+            email: event.target.value
+        });
+    };
+
+    submit = (event) => {
+        event.preventDefault();
+        const user = {
+            username: this.state.username,
+            password: this.state.password,
+            email: this.state.email
+        };
+        registerUser(user).then();
+    };
 
     render() {
         return (
@@ -18,12 +53,13 @@ class Register extends React.Component {
                         <div className="card-body ">
                             <form>
                                 <input type="text" className="form-control my-3" id="inputUsername"
-                                       placeholder="Username"/>
-                                <input type="email" className="form-control my-3" id="inputEmail" placeholder="E-mail"/>
+                                       placeholder="Username" onChange={this.onUsernameChange}/>
+                                <input type="email" className="form-control my-3" id="inputEmail" placeholder="E-mail"
+                                onChange={this.onEmailChange}/>
                                 <input type="email" className="form-control my-3" id="inputEmailRe"
                                        placeholder="Confirm e-mail"/>
                                 <input type="password" className="form-control my-3" id="inputPassword"
-                                       placeholder="Password"/>
+                                       placeholder="Password" onChange={this.onPasswordChange}/>
                                 <input type="password" className="form-control my-3" id="inputPasswordRe"
                                        placeholder="Confirm password"/>
                                 <div className="form-check my-2">
@@ -34,7 +70,7 @@ class Register extends React.Component {
                                         .
                                     </label>
                                 </div>
-                                <button type="submit" className="btn btn-secondary px-3 my-2">Register</button>
+                                <button type="submit" className="btn btn-secondary px-3 my-2" onClick={this.submit}>Register</button>
                             </form>
                         </div>
                     </div>
