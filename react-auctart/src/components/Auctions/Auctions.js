@@ -3,6 +3,7 @@ import '../../assets/css/fonts.css';
 import './Auctions.css'
 import img1 from '../../assets/img/main-bg.jpg';
 import img2 from '../../assets/img/vertical-painting.png';
+import {Link} from "react-router-dom";
 
 class Auctions extends React.Component {
 
@@ -13,35 +14,74 @@ class Auctions extends React.Component {
 
     render() {
         return (
-            <div className="container py-5">
-                <div className="row">
+            <div className="container">
+                <table className="table w-100 my-5">
+                    <tbody>
 
-                    <div className="card">
-                        <div className="card-body row">
-                            <div className="col-4">
-                                <div className="img-holder">
-                                    <img className="card-img" src={img1}/>
-                                </div>
-                            </div>
-                            <div className="col-8 img-holder">
-                                Soemthing
-                            </div>
-                        </div>
-                    </div>
+                    <tr>
+                        <td className="td-w-img pr-4 py-2">
+                            <img className="cropped-image " src={img1}/>
+                        </td>
+                        <td className="py-4">
+                            <h4>
+                                Name of art work&nbsp;
+                                <sub>
+                                    by Author
+                                </sub>
+                            </h4>
+                            <h2>
+                                $6.250
+                            </h2>
+                            <Link to="#" className="btn btn-outline-secondary float-right">Place bid</Link>
+                        </td>
+                    </tr>
 
-                    <div className="card">
-                        <div className="card-body row">
-                            <div className="col-4">
-                                <div className="img-holder">
-                                    <img className="card-img" src={img2}/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <tr>
+                        <td className="td-w-img">
+                            <img className="cropped-image " src={img2}/>
+                        </td>
+                        <td>
+                            <h4>
+                                Name of art work&nbsp;
+                                <sub>
+                                    by Author
+                                </sub>
+                            </h4>
+                            <h2>
+                                $6.250
+                            </h2>
+                            <Link to="#" className="btn btn-outline-secondary float-right">Place bid</Link>
 
+                        </td>
+                    </tr>
 
-                </div>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan="2">
+                                <nav aria-label="Page navigation example">
+                                    <ul className="pagination ">
+                                        <li className="page-item">
+                                            <a className="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item">
+                                            <a className="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
+
         );
     }
 }
