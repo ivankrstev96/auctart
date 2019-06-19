@@ -2,6 +2,7 @@ import React from 'react';
 import './Menu.css';
 import '../../assets/css/fonts.css';
 import {Link} from "react-router-dom";
+import {withAuthContext} from "../../context/AuthContext";
 
 class Menu extends React.Component {
 
@@ -9,6 +10,10 @@ class Menu extends React.Component {
         super(props);
         this.state = {}
     }
+
+    logout = () => {
+        this.props.logout();
+    };
 
     render() {
         return (
@@ -35,11 +40,15 @@ class Menu extends React.Component {
                             </form>
                         </li>
                     </ul>
+                    { this.props.isAuthenticated ? (
+                        <button className="btn btn-outline-secondary" onClick={this.logout}>Log out</button>
+                    ) : (
+                        <form className="form-inline my-2 float-right">
+                            <Link to="/Login" className="btn btn-outline-secondary mr-2 px-4 log-in-btn">Log in</Link>
+                            <Link to="/Register" className="btn btn-outline-secondary register-btn px-3">Register</Link>
+                        </form>
+                    )}
 
-                    <form className="form-inline my-2 float-right">
-                        <Link to="/Login" className="btn btn-outline-secondary mr-2 px-4 log-in-btn">Log in</Link>
-                        <Link to="/Register" className="btn btn-outline-secondary register-btn px-3">Register</Link>
-                    </form>
                 </div>
 
             </nav>
@@ -48,4 +57,4 @@ class Menu extends React.Component {
 }
 
 
-export default Menu;
+export default withAuthContext(Menu);
