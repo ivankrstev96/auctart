@@ -19,10 +19,10 @@ class Auctions extends React.Component {
                     <tbody>
 
                     <tr>
-                        <td className="td-w-img pr-4 py-2">
+                        <td className="td-w-img">
                             <img className="cropped-image " src={img1}/>
                         </td>
-                        <td className="py-4">
+                        <td>
                             <h4>
                                 Name of art work&nbsp;
                                 <sub>
@@ -30,7 +30,7 @@ class Auctions extends React.Component {
                                 </sub>
                             </h4>
                             <h2>
-                                $6.250
+                                $6,250
                             </h2>
                             <Link to="#" className="btn btn-outline-secondary float-right">Place bid</Link>
                         </td>
@@ -48,7 +48,7 @@ class Auctions extends React.Component {
                                 </sub>
                             </h4>
                             <h2>
-                                $6.250
+                                $6,250
                             </h2>
                             <Link to="#" className="btn btn-outline-secondary float-right">Place bid</Link>
 
@@ -60,17 +60,17 @@ class Auctions extends React.Component {
                         <tr>
                             <td colSpan="2">
                                 <nav aria-label="Page navigation example">
-                                    <ul className="pagination ">
-                                        <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Previous">
+                                    <ul className="pagination pag-style mx-auto mt-3 ">
+                                        <li className="page-item ">
+                                            <a className="page-link text-dark" href="#" aria-label="Previous">
                                                 <span aria-hidden="true">&laquo;</span>
                                             </a>
                                         </li>
-                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item"><a className="page-link text-dark" href="#">1</a></li>
+                                        <li className="page-item"><a className="page-link text-dark" href="#">2</a></li>
+                                        <li className="page-item"><a className="page-link text-dark" href="#">3</a></li>
                                         <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Next">
+                                            <a className="page-link text-dark" href="#" aria-label="Next">
                                                 <span aria-hidden="true">&raquo;</span>
                                             </a>
                                         </li>

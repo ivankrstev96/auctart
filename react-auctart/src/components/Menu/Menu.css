@@ -9,6 +9,12 @@
     font-size: 40px;
 }
 
+.user-img {
+    margin-right: 15px;
+    width: 35px !important;
+    height: 35px !important;
+}
+
 #searchBar:focus, #searchBarPrepend:focus, button:focus {
     border-color: lightgray;
     box-shadow: none;

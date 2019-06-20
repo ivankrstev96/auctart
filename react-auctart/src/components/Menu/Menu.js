@@ -2,6 +2,9 @@ import React from 'react';
 import './Menu.css';
 import '../../assets/css/fonts.css';
 import {Link} from "react-router-dom";
+
+import defaultuserimg from "../../assets/img/defaultuser.png";
+
 import {withAuthContext} from "../../context/AuthContext";
 
 class Menu extends React.Component {
@@ -41,7 +44,10 @@ class Menu extends React.Component {
                         </li>
                     </ul>
                     { this.props.isAuthenticated ? (
-                        <button className="btn btn-outline-secondary" onClick={this.logout}>Log out</button>
+                        <form className="form-inline my-2 float-right">
+                            <img className="img-fluid rounded-circle user-img" src={defaultuserimg}/>
+                            <button className="btn btn-outline-secondary" onClick={this.logout}>Log out</button>
+                        </form>
                     ) : (
                         <form className="form-inline my-2 float-right">
                             <Link to="/Login" className="btn btn-outline-secondary mr-2 px-4 log-in-btn">Log in</Link>

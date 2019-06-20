@@ -1,5 +1,6 @@
 .cropped-image {
     object-fit: cover;
+    display: block;
     height: 20vw;
     width: 20vw;
 }
@@ -10,9 +11,13 @@
 }
 
 
-@media only screen and (min-width: 1200px) {
-    .card-image {
-        height: 15vw !important;
-        width: 15vw !important;
+.pag-style {
+    width: 165px;
+}
+
+@media only screen and (max-width: 768px){
+    .cropped-image {
+        height: 30vw;
+        width: 30vw;
     }
 }
