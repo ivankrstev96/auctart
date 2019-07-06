@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Auctions from "../Auctions/Auctions";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import UploadAuction from "../UploadAuction/UploadAuction";
 import {AuthProvider} from "../../context/AuthContext";
 
 
@@ -31,6 +32,7 @@ class App extends Component {
                             <Route path="/Auctions" component={Auctions} />
                             <Route path="/Login" component={Login} />
                             <Route path="/Register" component={Register} />
+                            <Route path="/UploadAuction" component={UploadAuction} />
                         </Switch>
                     </Router>
                 </AuthProvider>

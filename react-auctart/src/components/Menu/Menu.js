@@ -29,7 +29,9 @@ class Menu extends React.Component {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <ul className="navbar-nav mr-auto">
+
                         <li className="nav-item">
                             <form className="form-group my-2 my-lg-0">
                                 <div className="input-group ">
@@ -45,8 +47,18 @@ class Menu extends React.Component {
                     </ul>
                     { this.props.isAuthenticated ? (
                         <form className="form-inline my-2 float-right">
-                            <img className="img-fluid rounded-circle user-img" src={defaultuserimg}/>
-                            <button className="btn btn-outline-secondary" onClick={this.logout}>Log out</button>
+
+                            <div className="dropleft">
+                                <Link to="#" className="" data-toggle="dropdown">
+                                    <img src={defaultuserimg} className="img-fluid rounded user-img"/>
+                                </Link>
+
+                                <div className="dropdown-menu">
+                                    <Link to="/UploadAuction" className="dropdown-item">Upload auction</Link>
+                                    <Link to="#" className="dropdown-item" onClick={this.logout}>Log out</Link>
+                                </div>
+
+                            </div>
                         </form>
                     ) : (
                         <form className="form-inline my-2 float-right">

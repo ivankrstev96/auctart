@@ -8,4 +8,10 @@
     color: cornflowerblue;
 }
 
+.error {
+    margin-left: 5px;
+    color: darkred;
+    font-size: 12px;
+}
+
 

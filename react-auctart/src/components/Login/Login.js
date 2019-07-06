@@ -1,9 +1,7 @@
 import React from 'react';
 import './Login.css';
 import '../../assets/css/fonts.css';
-import {Link} from "react-router-dom";
 import {withAuthContext} from "../../context/AuthContext";
-import defaultuser from "../../assets/img/defaultuser.png";
 
 class Login extends React.Component {
 
@@ -52,14 +50,7 @@ class Login extends React.Component {
                                            placeholder="Username" onChange={this.onUsernameChange}/>
                                     <input type="password" className="form-control my-3" id="inputPassword"
                                            placeholder="Password" onChange={this.onPasswordChange}/>
-                                    <div className="form-check my-2">
-                                        <input className="form-check-input" type="checkbox" value="" id="checkStayLogged"/>
-                                        <label className="form-check-label" htmlFor="checkStayLogged">
-                                            Stay logged in
-                                        </label>
-                                    </div>
                                     <button type="submit" className="btn btn-secondary px-4 my-2">Log in</button>
-                                    <Link to="#" className="d-block link my-2">Forgot password?</Link>
                                 </form>
                             )}
 
