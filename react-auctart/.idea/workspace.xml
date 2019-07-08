@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ee0fa9-3afe-4fe1-8bd7-54036a23f57e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/dto/AuctionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/dto/BidDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/configuration/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/configuration/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/domain/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/domain/Auction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/AuctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/AuctionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/BidService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/BidService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/AuctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/BidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/BidController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/ImageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auctions/Auctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auctions/Auctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,107 +21,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="55" column="84" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="84" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/authService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/browserStorageService.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/context/AuthContext.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/userService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+              <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -150,6 +83,8 @@
       <find>roun</find>
       <find>upload</find>
       <find>console.log</find>
+      <find>place bid</find>
+      <find>example</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,20 +118,21 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/service/authService.js" />
         <option value="$PROJECT_DIR$/src/service/userService.js" />
-        <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.js" />
         <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.css" />
         <option value="$PROJECT_DIR$/src/components/Menu/Menu.css" />
         <option value="$PROJECT_DIR$/src/components/Register/FormErrors.js" />
         <option value="$PROJECT_DIR$/src/components/Register/Register.css" />
         <option value="$PROJECT_DIR$/src/components/UploadImage/UploadImage.css" />
         <option value="$PROJECT_DIR$/src/components/UploadImage/UploadImage.js" />
-        <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js" />
         <option value="$PROJECT_DIR$/src/components/Register/Register.js" />
         <option value="$PROJECT_DIR$/src/components/Menu/Menu.js" />
         <option value="$PROJECT_DIR$/src/context/AuthContext.js" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
+        <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.js" />
         <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css" />
       </list>
     </option>
   </component>
@@ -206,7 +142,8 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -283,7 +220,21 @@
               <item name="react-auctart" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="PlaceBid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-auctart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-auctart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-auctart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-auctart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="UploadAuction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-auctart" type="b2602c69:ProjectViewProjectNode" />
@@ -308,7 +259,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562577976228" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562609515207" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../auctart" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -351,18 +302,17 @@
       <workItem from="1560517846229" duration="6096000" />
       <workItem from="1560602214559" duration="17214000" />
       <workItem from="1560630877655" duration="17003000" />
-      <workItem from="1562439055993" duration="16964000" />
+      <workItem from="1562439055993" duration="22877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117396000" />
+    <option name="totallyTimeSpent" value="122011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17406876" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.114605546" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -379,7 +329,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32929516" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32900432" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -474,15 +424,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="357">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/browserStorageService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -499,24 +449,14 @@
     <entry file="file://$PROJECT_DIR$/src/service/authService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/userService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -545,8 +485,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UploadImage/UploadImage.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/UploadImage/UploadImage.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/UploadImage/UploadImage.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UploadImage/UploadImage.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Register/Register.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -554,33 +498,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -594,10 +515,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        <state relative-caret-position="1173">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -606,34 +550,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/context/AuthContext.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+        <state relative-caret-position="1036">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+        <state relative-caret-position="527">
+          <caret line="55" column="84" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="84" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="108" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="108" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
