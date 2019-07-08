@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import '../../assets/css/fonts.css';
+import { Modal } from "semantic-ui-react";
 import Menu from "../Menu/Menu.js";
 import Intro from "../Intro/Intro";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -9,6 +10,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import UploadAuction from "../UploadAuction/UploadAuction";
 import {AuthProvider} from "../../context/AuthContext";
+import PlaceBid from "../PlaceBid/PlaceBid";
 
 
 
