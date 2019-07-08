@@ -24,7 +24,6 @@ public class UserService {
     }
 
     public User save(UserDto userDto) {
-
         User user = new User(userDto.username, encoder.encode(userDto.password), userDto.email, Roles.USER);
         return repository.save(user);
     }

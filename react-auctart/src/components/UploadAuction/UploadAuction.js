@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageUploader from 'react-images-upload';
+import {saveAuction} from "../../service/auctionService";
 
 class UploadAuction extends React.Component {
 
@@ -15,8 +16,21 @@ class UploadAuction extends React.Component {
         });
     }
 
+    submit = () => {
+        const auction = {
+            name: "test1",
+            author: "test1",
+            endDate: "23/09/2019 12:30",
+            startPrice: 123,
+            image: this.state.picture
+        };
+        console.log("REQUEST", auction);
+        saveAuction(auction).then(response => {
+            console.log(response);
+        });
+    };
+
     render() {
-        console.log(this.state.picture);
         return (
 
             <div className="container">
@@ -48,7 +62,7 @@ class UploadAuction extends React.Component {
                         </div>
 
                         <div className="col-12">
-                            <button type="submit" className="btn btn-outline-secondary">Upload auction</button>
+                            <button onClick={this.submit} className="btn btn-outline-secondary">Submit</button>
                         </div>
                     </div>
 

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 
-@Controller
-@RequestMapping("api/image")
+@RestController
+@RequestMapping("/api/image")
 public class ImageController {
     private final ImageService service;
 
