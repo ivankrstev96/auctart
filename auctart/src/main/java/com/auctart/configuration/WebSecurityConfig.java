@@ -70,7 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private String[] getPublicPaths() {
         return new String[]{
                 "/api/image/public/**",
-                "/api/user/register"
+                "/api/user/register",
+                "/api/auction/public/**"
         };
     }
 }

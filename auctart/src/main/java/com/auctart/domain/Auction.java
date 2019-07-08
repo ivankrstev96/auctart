@@ -11,7 +11,7 @@ public class Auction {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "auction")
+    @Column(name = "name")
     private String name;
 
     @Column(name = "author")
