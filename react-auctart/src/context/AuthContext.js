@@ -40,20 +40,25 @@ export class AuthProvider extends React.Component {
         );
     }
 
-    login = (user) => {
-        authenticateUser(user).then(response => {
-            const bearer = response.headers.authorization;
-            setAccessToken(bearer);
-            this.setState({
-               isAuthenticated: true
-            });
-            getAuthenticatedUser().then(userResponse => {
+    login = async (user) => {
+        return new Promise((resolve, reject) => {
+            authenticateUser(user).then(response => {
+                const bearer = response.headers.authorization;
+                setAccessToken(bearer);
                 this.setState({
-                    loggedInUser: userResponse.data
+                    isAuthenticated: true
                 });
+
+                getAuthenticatedUser().then(userResponse => {
+                    this.setState({
+                        loggedInUser: userResponse.data
+                    });
+                });
+                resolve();
+            }).catch(reason => {
+                console.log(reason);
+                reject ();
             });
-        }).catch(reason => {
-            console.log(reason);
         });
     };
 

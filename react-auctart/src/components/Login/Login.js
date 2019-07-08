@@ -2,12 +2,13 @@ import React from 'react';
 import './Login.css';
 import '../../assets/css/fonts.css';
 import {withAuthContext} from "../../context/AuthContext";
+import {withRouter} from "react-router-dom";
 
 class Login extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {username: "", password: ""};
+        this.state = {username: "", password: "", error: null};
     }
 
     login = (event) => {
@@ -17,7 +18,13 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-        this.props.login(user);
+        this.props.login(user)
+            .then(() => {
+                this.props.history.push("/Auctions");
+            })
+            .catch(() => {
+                this.setState({error: true});
+            });
     };
 
     onUsernameChange = (event) => {
@@ -42,7 +49,7 @@ class Login extends React.Component {
                         <div className="card-body">
 
 
-                            { this.props.isAuthenticated ? (
+                            {this.props.isAuthenticated ? (
                                 <p>You are logged in as {this.state.username}</p>
                             ) : (
                                 <form onSubmit={this.login}>
@@ -50,10 +57,10 @@ class Login extends React.Component {
                                            placeholder="Username" onChange={this.onUsernameChange}/>
                                     <input type="password" className="form-control my-3" id="inputPassword"
                                            placeholder="Password" onChange={this.onPasswordChange}/>
+                                    {this.state.error && <p className="text-danger">ERROR</p>}
                                     <button type="submit" className="btn btn-secondary px-4 my-2">Log in</button>
                                 </form>
                             )}
-
 
                         </div>
                     </div>
@@ -64,4 +71,4 @@ class Login extends React.Component {
     }
 }
 
-export default withAuthContext(Login);
+export default withRouter(withAuthContext(Login));

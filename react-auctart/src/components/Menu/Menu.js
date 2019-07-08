@@ -55,7 +55,7 @@ class Menu extends React.Component {
 
                                 <div className="dropdown-menu">
                                     <Link to="/UploadAuction" className="dropdown-item">Upload auction</Link>
-                                    <Link to="#" className="dropdown-item" onClick={this.logout}>Log out</Link>
+                                    <Link to="/" className="dropdown-item" onClick={this.logout}>Log out</Link>
                                 </div>
 
                             </div>
