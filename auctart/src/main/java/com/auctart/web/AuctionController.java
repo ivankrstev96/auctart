@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class AuctionController {
     }
 
     @PostMapping
-    public void saveAuction(@RequestBody AuctionDto auctionDto, Authentication authentication) {
+    public void saveAuction(@Valid AuctionDto auctionDto, Authentication authentication) throws IOException {
         this.service.saveAuction(auctionDto, ((HashMap<String, User>) authentication.getDetails()).get("account"));
     }
 

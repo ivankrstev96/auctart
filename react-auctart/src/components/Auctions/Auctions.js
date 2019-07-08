@@ -3,14 +3,21 @@ import '../../assets/css/fonts.css';
 import './Auctions.css'
 import img1 from '../../assets/img/main-bg.jpg';
 import img2 from '../../assets/img/vertical-painting.png';
-import { Link } from "react-router-dom";
-import { Modal } from "semantic-ui-react";
 import PlaceBid from "../PlaceBid/PlaceBid"
+import {getActiveAuctions, getHighestBidForAuction} from "../../service/auctionService";
 
 class Auctions extends React.Component {
     constructor(props) {
+        getActiveAuctions().then(auctions => {
+            this.setState({auctions: auctions});
+            getHighestBidForAuction(auctions[0].id).then(bid => {
+                console.log(bid);
+            }).catch(error => {
+                console.log(error);
+            });
+        });
         super(props);
-        this.state = {}
+        this.state = { auctions: [] }
     }
 
     render() {

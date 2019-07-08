@@ -1,5 +1,8 @@
 package com.auctart.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -18,9 +21,11 @@ public class Auction {
     private String author;
 
     @Column(name = "start_date")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime startDate;
 
     @Column(name = "end_date")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime endDate;
 
     @Column(name = "start_price")
@@ -30,16 +35,21 @@ public class Auction {
     @JoinColumn(name = "user")
     private User user;
 
+    @OneToOne
+    @JoinColumn(name = "image")
+    private Image image;
+
     public Auction() { }
 
     public Auction(String name, String author, LocalDateTime startDate,
-                   LocalDateTime endDate, Integer startPrice, User user) {
+                   LocalDateTime endDate, Integer startPrice, User user, Image image) {
         this.name = name;
         this.author = author;
         this.startDate = startDate;
         this.endDate = endDate;
         this.startPrice = startPrice;
         this.user = user;
+        this.image = image;
     }
 
     public Long getId() {

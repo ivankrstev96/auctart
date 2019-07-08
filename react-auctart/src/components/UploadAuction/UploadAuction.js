@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageUploader from 'react-images-upload';
+import {saveAuction} from "../../service/auctionService";
 
 class UploadAuction extends React.Component {
 
@@ -15,6 +16,20 @@ class UploadAuction extends React.Component {
         });
     }
 
+    submit = () => {
+        const auction = {
+            name: "test1",
+            author: "test1",
+            endDate: "23/09/2019 12:30",
+            startPrice: 123,
+            image: this.state.picture
+        };
+        console.log("REQUEST", auction);
+        saveAuction(auction).then(response => {
+            console.log(response);
+        });
+    };
+
     render() {
         return (
 
@@ -27,6 +42,7 @@ class UploadAuction extends React.Component {
                 imgExtension={['.jpg', '.gif', '.png']}
                 maxFileSize={5242880}
             />
+                <button onClick={this.submit} className="btn btn-outline-secondary">Submit</button>
 
             </div>
         );
