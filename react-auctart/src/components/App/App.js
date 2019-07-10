@@ -10,6 +10,7 @@ import Register from "../Register/Register";
 import UploadAuction from "../UploadAuction/UploadAuction";
 import {AuthProvider} from "../../context/AuthContext";
 import PlaceBid from "../PlaceBid/PlaceBid";
+import {NotificationProvider} from "../../context/NotificationContext";
 
 class App extends Component {
     constructor(props) {
@@ -24,16 +25,18 @@ class App extends Component {
         return (
             <div id="global">
                 <AuthProvider>
-                    <Router>
-                        <Menu/>
-                        <Switch>
-                            <Route path="/" exact component={Intro} />
-                            <Route path="/Auctions" component={Auctions} />
-                            <Route path="/Login" component={Login} />
-                            <Route path="/Register" component={Register} />
-                            <Route path="/UploadAuction" component={UploadAuction} />
-                        </Switch>
-                    </Router>
+                    <NotificationProvider>
+                        <Router>
+                            <Menu/>
+                            <Switch>
+                                <Route path="/" exact component={Intro}/>
+                                <Route path="/Auctions" component={Auctions}/>
+                                <Route path="/Login" component={Login}/>
+                                <Route path="/Register" component={Register}/>
+                                <Route path="/UploadAuction" component={UploadAuction}/>
+                            </Switch>
+                        </Router>
+                    </NotificationProvider>
                 </AuthProvider>
             </div>
         );

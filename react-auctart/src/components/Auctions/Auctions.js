@@ -5,12 +5,19 @@ import img1 from '../../assets/img/main-bg.jpg';
 import img2 from '../../assets/img/vertical-painting.png';
 import PlaceBid from "../PlaceBid/PlaceBid"
 import {getActiveAuctions, getHighestBidForAuction} from "../../service/auctionService";
+import {withNotificationContext} from "../../context/NotificationContext";
 
 class Auctions extends React.Component {
     constructor(props) {
         getActiveAuctions().then(auctions => {
             this.setState({auctions: auctions});
-
+        }).catch(() => {
+            this.props.notificationSystem.current.addNotification({
+                title: "Error",
+                message: "Something went wrong",
+                level: "error",
+                autoDismiss: 3
+            });
         });
         super(props);
         this.state = { auctions: [] }
@@ -92,4 +99,4 @@ class Auctions extends React.Component {
 }
 
 
-export default Auctions;
+export default withNotificationContext(Auctions);

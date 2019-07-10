@@ -1,8 +1,9 @@
 import React from 'react';
 import './Register.css';
 import '../../assets/css/fonts.css';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import {registerUser} from "../../service/userService";
+import {withNotificationContext} from "../../context/NotificationContext";
 
 class Register extends React.Component {
 
@@ -32,7 +33,7 @@ class Register extends React.Component {
         const username = event.target.value;
 
         if (username && username.length > 2 && username.length <= 50) {
-            this.setState( {
+            this.setState({
                     username: username,
                     formErrors: {
                         usernameValid: "",
@@ -44,7 +45,7 @@ class Register extends React.Component {
                 }
             )
         } else {
-            this.setState( {
+            this.setState({
                     username: username,
                     formErrors: {
                         usernameValid: "Username must be between 3 and 50 characters.",
@@ -63,7 +64,7 @@ class Register extends React.Component {
         const regex = /.+@.+\..+/;
 
         if (email.match(regex)) {
-            this.setState( {
+            this.setState({
                     email: email,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -75,7 +76,7 @@ class Register extends React.Component {
                 }
             )
         } else {
-            this.setState( {
+            this.setState({
                     email: email,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -93,8 +94,8 @@ class Register extends React.Component {
         const reEmail = event.target.value;
 
         if (reEmail.match(this.state.email)) {
-            this.setState( {
-                    confirmEmail : reEmail,
+            this.setState({
+                    confirmEmail: reEmail,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
                         emailValid: this.state.formErrors.emailValid,
@@ -105,7 +106,7 @@ class Register extends React.Component {
                 }
             )
         } else {
-            this.setState ({
+            this.setState({
                     confirmEmail: reEmail,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -123,7 +124,7 @@ class Register extends React.Component {
         const password = event.target.value;
 
         if (password && password.length >= 6 && password.length <= 50) {
-            this.setState( {
+            this.setState({
                     password: password,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -135,7 +136,7 @@ class Register extends React.Component {
                 }
             )
         } else {
-            this.setState( {
+            this.setState({
                     password: password,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -153,8 +154,8 @@ class Register extends React.Component {
         const rePassword = event.target.value;
 
         if (rePassword.match(this.state.password)) {
-            this.setState( {
-                    confirmPassword : rePassword,
+            this.setState({
+                    confirmPassword: rePassword,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
                         emailValid: this.state.formErrors.emailValid,
@@ -165,7 +166,7 @@ class Register extends React.Component {
                 }
             )
         } else {
-            this.setState ({
+            this.setState({
                     confirmEmail: rePassword,
                     formErrors: {
                         usernameValid: this.state.formErrors.usernameValid,
@@ -205,7 +206,22 @@ class Register extends React.Component {
             password: this.state.password,
             email: this.state.email
         };
-        registerUser(user).then();
+        registerUser(user).then(() => {
+            this.props.notificationSystem.current.addNotification({
+                title: "Success",
+                message: "You have successfully registered",
+                level: "success",
+                autoDismiss: 3
+            });
+            this.props.history.push("/Login");
+        }).catch(() => {
+            this.props.notificationSystem.current.addNotification({
+                title: "Error",
+                message: "Something went wrong",
+                level: "error",
+                autoDismiss: 5
+            });
+        });
     };
 
     render() {
@@ -220,40 +236,41 @@ class Register extends React.Component {
                                 <input type="text" className="form-control my-3" id="inputUsername"
                                        placeholder="Username" onChange={this.onUsernameChange}/>
                                 {
-                                    (this.state.formErrors.usernameValid && this.state.formErrors.usernameValid === "" ) ?
-                                    "" :
-                                    (<p className="error">{this.state.formErrors.usernameValid}</p>)
+                                    (this.state.formErrors.usernameValid && this.state.formErrors.usernameValid === "") ?
+                                        "" :
+                                        (<p className="error">{this.state.formErrors.usernameValid}</p>)
                                 }
                                 <input type="email" className="form-control my-3" id="inputEmail" placeholder="E-mail"
                                        onChange={this.onEmailChange}/>
                                 {
-                                    (this.state.formErrors.emailValid && this.state.formErrors.emailValid === "" ) ?
+                                    (this.state.formErrors.emailValid && this.state.formErrors.emailValid === "") ?
                                         "" :
-                                        (<p  className="error">{this.state.formErrors.emailValid}</p>)
+                                        (<p className="error">{this.state.formErrors.emailValid}</p>)
                                 }
                                 <input type="email" className="form-control my-3" id="inputEmailRe"
-                                       placeholder="Confirm e-mail" onChange={this.onReEmailChange} />
+                                       placeholder="Confirm e-mail" onChange={this.onReEmailChange}/>
                                 {
-                                    (this.state.formErrors.confirmEmailValid && this.state.formErrors.confirmEmailValid === "" ) ?
+                                    (this.state.formErrors.confirmEmailValid && this.state.formErrors.confirmEmailValid === "") ?
                                         "" :
-                                        (<p  className="error">{this.state.formErrors.confirmEmailValid}</p>)
+                                        (<p className="error">{this.state.formErrors.confirmEmailValid}</p>)
                                 }
                                 <input type="password" className="form-control my-3" id="inputPassword"
                                        placeholder="Password" onChange={this.onPasswordChange}/>
                                 {
-                                    (this.state.formErrors.passwordValid && this.state.formErrors.passwordValid === "" ) ?
+                                    (this.state.formErrors.passwordValid && this.state.formErrors.passwordValid === "") ?
                                         "" :
                                         (<p className="error">{this.state.formErrors.passwordValid}</p>)
                                 }
                                 <input type="password" className="form-control my-3" id="inputPasswordRe"
                                        placeholder="Confirm password" onChange={this.onRePasswordChange}/>
                                 {
-                                    (this.state.formErrors.confirmPasswordValid && this.state.formErrors.confirmPasswordValid === "" ) ?
+                                    (this.state.formErrors.confirmPasswordValid && this.state.formErrors.confirmPasswordValid === "") ?
                                         "" :
                                         (<p className="error">{this.state.formErrors.confirmPasswordValid}</p>)
                                 }
                                 <div className="form-check my-2">
-                                    <input className="form-check-input " type="checkbox" id="checkStayLogged" onChange={this.onCheckChange}/>
+                                    <input className="form-check-input " type="checkbox" id="checkStayLogged"
+                                           onChange={this.onCheckChange}/>
                                     <label className="form-check-label small" htmlFor="checkStayLogged">
                                         I have read and agree to the AuctArt&nbsp;
                                         <Link to="#" className="link">Terms of Service</Link>
@@ -276,4 +293,4 @@ class Register extends React.Component {
 }
 
 
-export default Register;
+export default withNotificationContext(withRouter(Register));
