@@ -4,7 +4,6 @@ import {saveAuction} from "../../service/auctionService";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./UploadAuction.css";
-import moment from "moment";
 
 class UploadAuction extends React.Component {
 
@@ -89,6 +88,8 @@ class UploadAuction extends React.Component {
         console.log("REQUEST", auction);
         saveAuction(auction).then(response => {
             console.log(response);
+        }).catch(() => {
+
         });
     };
 
@@ -103,7 +104,7 @@ class UploadAuction extends React.Component {
 
     formatDate = (d) => {
         return ("0" + d.getDate()).slice(-2) + "/" + ("0"+(d.getMonth()+1)).slice(-2) + "/" +
-            d.getFullYear();
+            d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
     };
 
     render() {
