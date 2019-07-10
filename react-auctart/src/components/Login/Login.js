@@ -57,7 +57,7 @@ class Login extends React.Component {
                                            placeholder="Username" onChange={this.onUsernameChange}/>
                                     <input type="password" className="form-control my-3" id="inputPassword"
                                            placeholder="Password" onChange={this.onPasswordChange}/>
-                                    {this.state.error && <p className="text-danger">ERROR</p>}
+                                    {this.state.error && <p className="text-danger">Incorrect username or password</p>}
                                     <button type="submit" className="btn btn-secondary px-4 my-2">Log in</button>
                                 </form>
                             )}

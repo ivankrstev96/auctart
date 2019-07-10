@@ -17,7 +17,7 @@ public class AuctionDto {
 
     @NotNull
     @Future
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     public LocalDateTime endDate;
 
     @NotNull

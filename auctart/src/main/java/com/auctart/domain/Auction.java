@@ -21,11 +21,11 @@ public class Auction {
     private String author;
 
     @Column(name = "start_date")
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDateTime startDate;
 
     @Column(name = "end_date")
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDateTime endDate;
 
     @Column(name = "start_price")

@@ -10,11 +10,7 @@ class Auctions extends React.Component {
     constructor(props) {
         getActiveAuctions().then(auctions => {
             this.setState({auctions: auctions});
-            getHighestBidForAuction(auctions[0].id).then(bid => {
-                console.log(bid);
-            }).catch(error => {
-                console.log(error);
-            });
+
         });
         super(props);
         this.state = { auctions: [] }

@@ -1,5 +1,8 @@
 .fileContainer {
-    outline: 0 !important;
     box-shadow: none !important;
     drop-shadow: none !important;
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container {
+    display: block !important;
 }
