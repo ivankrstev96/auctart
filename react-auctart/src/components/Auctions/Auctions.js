@@ -25,37 +25,35 @@ class Auctions extends React.Component {
         });
     }
 
-    handlePageClick = (e) => {
-        console.log(e.target.id);
+    handlePageFirst = (e) => {
         this.setState({
-            auctions: this.state.auctions,
-            currentPage: Number(e.target.id),
-            auctionsPerPage: this.state.auctionsPerPage
+            currentPage: 1,
         });
     };
 
-    preview = (auctions) => {
-        auctions = this.state.auctions;
-        let table = [];
+    handlePageLast = (e) => {
+        const lastPage = Math.ceil(this.state.auctions.length / this.state.auctionsPerPage);
+        this.setState({
+            currentPage: lastPage,
+        });
+    };
 
-        for (let i = 0; i < auctions.length; i++) {
-
-         //   table.push(<tr key={i}>{children}</tr>)
-        }
-
-        //return table;
+    handlePageClick = (e) => {
+        this.setState({
+            currentPage: Number(e.target.id),
+        });
     };
 
     previewAuction = (auction, auctions) => {
         const children = [];
         const index = auctions.indexOf(auction);
         children.push(
-            <td key={"td1_"+index} className="td-w-img d-table-cell align-middle">
+            <td key={"td1_" + index} className="td-w-img d-table-cell align-middle">
                 <img className="cropped-image " src={`/api/image/public/${auction.id}`}/>
             </td>
         );
         children.push(
-            <td key={"td2_"+index} className="py-4">
+            <td key={"td2_" + index} className="py-4">
                 <h3>
                     {auction.name}&nbsp;
                 </h3>
@@ -65,7 +63,7 @@ class Auctions extends React.Component {
                     </sub>
                 </h3>
                 <h5>
-                    Active until: {auction.endDate.slice(0,10)}
+                    Active until: {auction.endDate.slice(0, 10)}
                 </h5>
                 <div className="float-to-bottom float-right">
                     <PlaceBid auction={auction}/>
@@ -75,56 +73,62 @@ class Auctions extends React.Component {
         return children;
     };
 
-    renderPreviews = () => {
-
-    };
-
-
-
     render() {
-        console.log(this.state);
-
-        const { auctions, currentPage, auctionsPerPage } = this.state;
+        const {auctions, currentPage, auctionsPerPage} = this.state;
 
         const indexOfLast = currentPage * auctionsPerPage;
         const indexOfFirst = indexOfLast - auctionsPerPage;
         const currentAuctions = auctions.slice(indexOfFirst, indexOfLast);
 
         const renderAuctions = currentAuctions.map((auction, index) => {
-            return <tr key={"pg_"+index}>{this.previewAuction(auction, auctions)}</tr>;
+            return <tr key={"pg_" + index}>{this.previewAuction(auction, auctions)}</tr>;
         });
 
         //
 
         const pageNumbers = [];
-        for(let i = 1; i <= Math.ceil(auctions.length / auctionsPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(auctions.length / auctionsPerPage); i++) {
             pageNumbers.push(i);
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
-            return(
+            let returnCode = [];
+            returnCode.push(
                 <li
                     className="page-item"
-                    key={"pg_"+number}
-
+                    key={"pg_" + number}
                     onClick={this.handlePageClick}
                 >
-
                     <a href="#" id={number} className="page-link text-dark">{number}</a>
 
                 </li>
             );
+
+            let currentPage = this.state.currentPage;
+            const lastPage = Math.ceil(auctions.length / auctionsPerPage);
+
+            if (currentPage == 1) {
+                if (number == 1 || number == 2 || number == 3) {
+                    return returnCode;
+                }
+            } else if (currentPage == lastPage) {
+                if (number == lastPage - 2 || number == lastPage - 1 || number == lastPage) {
+                    return returnCode;
+                }
+            } else {
+                if (number == currentPage - 1 || number == currentPage || number == currentPage + 1) {
+                    return returnCode;
+                }
+            }
+
         });
-
-
-
 
         return (
             <div className="container">
                 <table className="table w-100 my-5">
                     <tbody>
 
-                        {renderAuctions}
+                    {renderAuctions}
 
                     </tbody>
                     <tfoot>
@@ -133,7 +137,8 @@ class Auctions extends React.Component {
                             <nav aria-label="Page navigation example">
                                 <ul className="pagination pag-style mx-auto mt-3 ">
                                     <li className="page-item ">
-                                        <a className="page-link text-dark" href="#" aria-label="Previous">
+                                        <a name="first" onClick={this.handlePageFirst} className="page-link text-dark"
+                                           href="#" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -141,7 +146,8 @@ class Auctions extends React.Component {
                                     {renderPageNumbers}
 
                                     <li className="page-item">
-                                        <a className="page-link text-dark" href="#" aria-label="Next">
+                                        <a name="last" onClick={this.handlePageLast} className="page-link text-dark"
+                                           href="#" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
