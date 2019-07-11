@@ -3,12 +3,13 @@ import './Login.css';
 import '../../assets/css/fonts.css';
 import {withAuthContext} from "../../context/AuthContext";
 import {withRouter} from "react-router-dom";
+import {withNotificationContext} from "../../context/NotificationContext";
 
 class Login extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {username: "", password: "", error: null};
+        this.state = {username: "", password: ""};
     }
 
     login = (event) => {
@@ -20,10 +21,21 @@ class Login extends React.Component {
         };
         this.props.login(user)
             .then(() => {
+                this.props.notificationSystem.current.addNotification({
+                    title: "Success",
+                    message: "Login was successful",
+                    level: "success",
+                    autoDismiss: 3
+                });
                 this.props.history.push("/Auctions");
             })
             .catch(() => {
-                this.setState({error: true});
+                this.props.notificationSystem.current.addNotification({
+                    title: "Failure",
+                    message: "Incorrect username or password",
+                    level: "error",
+                    autoDismiss: 5
+                });
             });
     };
 
@@ -57,7 +69,6 @@ class Login extends React.Component {
                                            placeholder="Username" onChange={this.onUsernameChange}/>
                                     <input type="password" className="form-control my-3" id="inputPassword"
                                            placeholder="Password" onChange={this.onPasswordChange}/>
-                                    {this.state.error && <p className="text-danger">Incorrect username or password</p>}
                                     <button type="submit" className="btn btn-secondary px-4 my-2">Log in</button>
                                 </form>
                             )}
@@ -71,4 +82,4 @@ class Login extends React.Component {
     }
 }
 
-export default withRouter(withAuthContext(Login));
+export default withNotificationContext(withRouter(withAuthContext(Login)));

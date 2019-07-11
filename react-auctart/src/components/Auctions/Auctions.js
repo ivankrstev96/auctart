@@ -3,19 +3,26 @@ import '../../assets/css/fonts.css';
 import './Auctions.css'
 import PlaceBid from "../PlaceBid/PlaceBid"
 import {getActiveAuctions} from "../../service/auctionService";
+import {withNotificationContext} from "../../context/NotificationContext";
 
 class Auctions extends React.Component {
     constructor(props) {
+        super(props);
+        this.state = {auctions: []}
         getActiveAuctions().then(auctions => {
             this.setState({
                 auctions: auctions,
                 currentPage: 1,
                 auctionsPerPage: 3
+            }).catch(() => {
+                this.props.notificationSystem.current.addNotification({
+                    title: "Error",
+                    message: "Something went wrong",
+                    level: "error",
+                    autoDismiss: 3
+                });
             });
-
         });
-        super(props);
-        this.state = {auctions: []}
     }
 
     handlePageClick = (e) => {

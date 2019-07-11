@@ -4,6 +4,9 @@ import {saveAuction} from "../../service/auctionService";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./UploadAuction.css";
+import {withAuthContext} from "../../context/AuthContext";
+import {withNotificationContext} from "../../context/NotificationContext";
+import {withRouter} from "react-router-dom";
 
 class UploadAuction extends React.Component {
 
@@ -85,11 +88,21 @@ class UploadAuction extends React.Component {
                 endDate: this.formatDate(this.state.endDate),
                 startPrice: this.state.startPrice
             };
-        console.log("REQUEST", auction);
         saveAuction(auction).then(response => {
-            console.log(response);
+            this.props.notificationSystem.current.addNotification({
+                title: "Success",
+                message: "Auction was successfully created",
+                level: "success",
+                autoDismiss: 3
+            });
+            this.props.history.push("/Auctions");
         }).catch(() => {
-
+            this.props.notificationSystem.current.addNotification({
+                title: "Error",
+                message: "Something went wrong",
+                level: "error",
+                autoDismiss: 5
+            });
         });
     };
 
@@ -167,4 +180,4 @@ class UploadAuction extends React.Component {
 
 }
 
-export default UploadAuction;
+export default withNotificationContext(withRouter(UploadAuction));
