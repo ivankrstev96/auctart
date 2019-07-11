@@ -35,6 +35,10 @@ class PlaceBid extends React.Component {
         };
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(prevState.highestBidValue, this.state.highestBidValue);
+    }
+
     handleClose = () => {
         this.setState({show: false});
     };
