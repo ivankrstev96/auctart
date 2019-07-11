@@ -159,7 +159,7 @@ class UploadAuction extends React.Component {
                         </div>
                         <div className="col-md-6 form-group">
                             <label htmlFor="startpriceAuction">Starting price</label>
-                            <input type="number" className="form-control" placeholder="USD"
+                            <input type="number" min="0" className="form-control" placeholder="USD"
                                    id="startpriceAuction" onChange={this.onPriceChange}/>
                         </div>
 
