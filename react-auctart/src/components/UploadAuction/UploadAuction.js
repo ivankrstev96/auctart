@@ -4,7 +4,6 @@ import {saveAuction} from "../../service/auctionService";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./UploadAuction.css";
-import {withAuthContext} from "../../context/AuthContext";
 import {withNotificationContext} from "../../context/NotificationContext";
 import {withRouter} from "react-router-dom";
 
@@ -121,7 +120,6 @@ class UploadAuction extends React.Component {
     };
 
     render() {
-        console.log(this.disableButton());
         return (
 
             <div className="container">

@@ -39,6 +39,17 @@ public class AuctionService {
                 .collect(Collectors.toList());
     }
 
+    public List<Auction> searchActiveAuctions(String query) {
+        return this.repository.findAll()
+                .stream().filter(auction -> auction
+                        .getEndDate()
+                        .isAfter(LocalDateTime.now())
+                        && (auction.getName().toLowerCase().contains(query.toLowerCase())
+                        || auction.getAuthor().toLowerCase().contains(query.toLowerCase())
+                ))
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public Auction saveAuction(AuctionDto dto, User user) throws IOException {
         Image image = this.imageService.save(dto.image);

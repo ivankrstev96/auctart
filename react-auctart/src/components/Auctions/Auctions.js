@@ -3,13 +3,27 @@ import '../../assets/css/fonts.css';
 import './Auctions.css'
 import PlaceBid from "../PlaceBid/PlaceBid"
 import {getActiveAuctions} from "../../service/auctionService";
-import {withNotificationContext} from "../../context/NotificationContext";
+import {withSearchContext} from "../../context/SearchContext";
+import debounce from "lodash.debounce"
 
 class Auctions extends React.Component {
     constructor(props) {
         super(props);
+        this.debounceTime = 800;
+        this.updateAuctionsWithDebounce = debounce(this.updateAuctions, this.debounceTime);
         this.state = {auctions: []};
-        getActiveAuctions().then(auctions => {
+        this.updateAuctionsWithDebounce();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.updateAuctionsWithDebounce();
+        }
+    }
+
+    updateAuctions = () => {
+        const {searchQuery} = this.props;
+        getActiveAuctions(searchQuery).then(auctions => {
             this.setState({
                 auctions: auctions,
                 currentPage: 1,
@@ -23,7 +37,7 @@ class Auctions extends React.Component {
                 autoDismiss: 3
             });
         });
-    }
+    };
 
     handlePageFirst = (e) => {
         this.setState({
@@ -99,7 +113,7 @@ class Auctions extends React.Component {
                     key={"pg_" + number}
                     onClick={this.handlePageClick}
                 >
-                    <a href="#" id={number} className="page-link text-dark">{number}</a>
+                    <button id={number} className="page-link text-dark">{number}</button>
 
                 </li>
             );
@@ -137,19 +151,21 @@ class Auctions extends React.Component {
                             <nav aria-label="Page navigation example">
                                 <ul className="pagination pag-style mx-auto mt-3 ">
                                     <li className="page-item ">
-                                        <a name="first" onClick={this.handlePageFirst} className="page-link text-dark"
-                                           href="#" aria-label="Previous">
+                                        <button name="first" onClick={this.handlePageFirst}
+                                                className="page-link text-dark"
+                                                aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
 
                                     {renderPageNumbers}
 
                                     <li className="page-item">
-                                        <a name="last" onClick={this.handlePageLast} className="page-link text-dark"
-                                           href="#" aria-label="Next">
+                                        <button name="last" onClick={this.handlePageLast}
+                                                className="page-link text-dark"
+                                                aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </nav>
@@ -164,4 +180,4 @@ class Auctions extends React.Component {
 }
 
 
-export default Auctions;
+export default withSearchContext(Auctions);

@@ -10,6 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +28,11 @@ public class AuctionController {
     @GetMapping("/public")
     public List<Auction> getActiveAuctions() {
         return this.service.getActiveAuctions();
+    }
+
+    @GetMapping(value = "/public", params = "query")
+    public List<Auction> searchActiveAuction(@PathParam("query") String query) {
+        return this.service.searchActiveAuctions(query);
     }
 
     @PostMapping

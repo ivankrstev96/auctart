@@ -11,6 +11,7 @@ import UploadAuction from "../UploadAuction/UploadAuction";
 import {AuthProvider} from "../../context/AuthContext";
 import PlaceBid from "../PlaceBid/PlaceBid";
 import {NotificationProvider} from "../../context/NotificationContext";
+import {SearchProvider} from "../../context/SearchContext";
 
 class App extends Component {
     constructor(props) {
@@ -26,17 +27,19 @@ class App extends Component {
             <div id="global">
                 <AuthProvider>
                     <NotificationProvider>
-                        <Router>
-                            <Menu/>
-                            <Switch>
-                                <Route path="/" exact component={Intro}/>
-                                <Route path="/Auctions" component={Auctions}/>
-                                <Route path="/Login" component={Login}/>
-                                <Route path="/Register" component={Register}/>
-                                <Route path="/UploadAuction" component={UploadAuction}/>
-                                <Route path="/PlaceBid" component={PlaceBid}/>
-                            </Switch>
-                        </Router>
+                        <SearchProvider>
+                            <Router>
+                                <Menu/>
+                                <Switch>
+                                    <Route path="/" exact component={Intro}/>
+                                    <Route path="/Auctions" component={Auctions}/>
+                                    <Route path="/Login" component={Login}/>
+                                    <Route path="/Register" component={Register}/>
+                                    <Route path="/UploadAuction" component={UploadAuction}/>
+                                    <Route path="/PlaceBid" component={PlaceBid}/>
+                                </Switch>
+                            </Router>
+                        </SearchProvider>
                     </NotificationProvider>
                 </AuthProvider>
             </div>

@@ -2,9 +2,13 @@ import axios from "./http";
 
 const apiUri = "/api/auction";
 
-export const getActiveAuctions = () => {
-    return axios.get(`${apiUri}/public`)
-        .then(response => response.data);
+export const getActiveAuctions = (query) => {
+    if(query){
+        return axios.get(`${apiUri}/public?query=${query}`)
+            .then(response => response.data);
+    }
+        return axios.get(`${apiUri}/public`)
+            .then(response => response.data);
 };
 
 export const getHighestBidForAuction = (auctionId) => {

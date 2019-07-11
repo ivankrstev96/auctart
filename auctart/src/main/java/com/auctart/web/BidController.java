@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 
 @Controller
@@ -24,7 +25,7 @@ public class BidController {
     }
 
     @PostMapping
-    public void saveBid(@RequestBody BidDto bidDto, Authentication authentication){
+    public void saveBid(@Valid @RequestBody BidDto bidDto, Authentication authentication){
         this.service.saveBid(bidDto, ((HashMap<String, User>) authentication.getDetails()).get("account"));
     }
 }

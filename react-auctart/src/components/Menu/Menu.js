@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import defaultuserimg from "../../assets/img/defaultuser.png";
 
 import {withAuthContext} from "../../context/AuthContext";
+import {withSearchContext} from "../../context/SearchContext";
 
 class Menu extends React.Component {
 
@@ -16,6 +17,10 @@ class Menu extends React.Component {
 
     logout = () => {
         this.props.logout();
+    };
+
+    updateSearchQuery = (event) => {
+        this.props.updateSearchQuery(event.target.value);
     };
 
     render() {
@@ -36,11 +41,11 @@ class Menu extends React.Component {
                             <form className="form-group my-2 my-lg-0">
                                 <div className="input-group ">
                                     <div className="input-group-prepend">
-                                        <Link to="#" className="btn btn-outline-secondary rounded-left"
+                                        <Link to="/Auctions" className="btn btn-outline-secondary rounded-left"
                                            id="searchBarPrepend"><i className="fas fa-search"></i></Link>
                                     </div>
                                     <input type="search" className="form-control" id="searchBar"
-                                           placeholder="Search artwork"/>
+                                           placeholder="Search artwork" onChange={this.updateSearchQuery}/>
                                 </div>
                             </form>
                         </li>
@@ -75,4 +80,4 @@ class Menu extends React.Component {
 }
 
 
-export default withAuthContext(Menu);
+export default withSearchContext(withAuthContext(Menu));
