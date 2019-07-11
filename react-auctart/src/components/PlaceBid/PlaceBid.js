@@ -3,6 +3,8 @@ import './PlaceBid.css';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import {getHighestBidForAuction} from "../../service/auctionService";
+import {Promise as saveBid} from "q";
+import {withNotificationContext} from "../../context/NotificationContext";
 
 
 class PlaceBid extends React.Component {
@@ -29,7 +31,8 @@ class PlaceBid extends React.Component {
         this.state = {
             show: false,
             highestBidValue: null,
-            hasBids: false
+            hasBids: false,
+            yourBid: null
         };
     }
 
@@ -41,8 +44,24 @@ class PlaceBid extends React.Component {
         this.setState({show: true});
     };
 
-    handlePlaceBid = () => {
-        
+    onInputChange = (event) => {
+        let bid = event.target.value;
+        this.setState( {
+            yourBid: bid
+        })
+    };
+
+    handlePlaceBid = (event) => {
+        event.preventDefault();
+        const {auction} = this.props;
+        const bid = {
+            auction: auction.id,
+            price: +this.state.yourBid
+        };
+        console.log(bid);
+        saveBid(bid).then(() => {
+
+        });
     };
 
     renderModalBody = () => {
@@ -51,7 +70,7 @@ class PlaceBid extends React.Component {
             <div>
                 <img className="cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
                 <div className="input-group mb-3">
-                    <input type="number" min={this.state.highestBidValue} className="form-control"
+                    <input type="number" min={this.state.highestBidValue} onChange={this.onInputChange} className="form-control"
                            placeholder="Place your bid here"/>
                     <div className="input-group-append">
                         <button className="btn btn-outline-secondary" onClick={this.handlePlaceBid}>
@@ -59,8 +78,6 @@ class PlaceBid extends React.Component {
                         </button>
                     </div>
                 </div>
-
-
             </div>
         );
     };
@@ -89,4 +106,4 @@ class PlaceBid extends React.Component {
 
 }
 
-export default PlaceBid
+export default withNotificationContext(PlaceBid);
