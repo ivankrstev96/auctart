@@ -22,7 +22,7 @@ public class BidService {
 
     @Transactional
     public void saveBid(BidDto dto, User user){
-        Bid bid = new Bid(user, auctionRepository.getOne(dto.auctionId), dto.price);
+        Bid bid = new Bid(user, auctionRepository.getOne(dto.auction), dto.price);
         this.repository.save(bid);
     }
 }

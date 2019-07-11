@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 public class BidDto {
 
     @NotNull
-    public Long auctionId;
+    public Long auction;
 
     @NotNull
     @PositiveOrZero
