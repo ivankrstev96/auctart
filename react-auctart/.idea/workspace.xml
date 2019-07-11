@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ee0fa9-3afe-4fe1-8bd7-54036a23f57e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/BidService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/service/BidService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/dto/BidDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auctart/src/main/java/com/auctart/web/dto/BidDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auctions/Auctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auctions/Auctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -28,29 +28,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/authService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/browserStorageService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/service/bidService.js">
+        <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="167">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,30 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Register/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="208" column="24" lean-forward="true" selection-start-line="208" selection-start-column="24" selection-end-line="208" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#checkValid#0;n#Register#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/userService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+            <state relative-caret-position="523">
+              <caret line="295" column="60" selection-start-line="295" selection-start-column="15" selection-end-line="295" selection-end-column="60" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -90,19 +53,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
+        <entry file="file://$PROJECT_DIR$/src/service/bidService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/context/SearchContext.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -110,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/auctionService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="170">
+              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -143,13 +97,11 @@
       <find>picture</find>
       <find>moment</find>
       <find>id</find>
-      <find>Auth</find>
-      <find>console.lo</find>
-      <find>console</find>
+      <find>input</find>
+      <find>placebid</find>
     </findStrings>
     <replaceStrings>
       <replace>image</replace>
-      <replace>Search</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,22 +139,21 @@
         <option value="$PROJECT_DIR$/src/components/Register/Register.css" />
         <option value="$PROJECT_DIR$/src/components/UploadImage/UploadImage.css" />
         <option value="$PROJECT_DIR$/src/components/UploadImage/UploadImage.js" />
-        <option value="$PROJECT_DIR$/src/components/Register/Register.js" />
+        <option value="$PROJECT_DIR$/src/components/Menu/Menu.js" />
         <option value="$PROJECT_DIR$/src/context/AuthContext.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css" />
         <option value="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.development.js" />
+        <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.css" />
         <option value="$PROJECT_DIR$/src/components/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.css" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" />
-        <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css" />
-        <option value="$PROJECT_DIR$/src/components/App/App.js" />
-        <option value="$PROJECT_DIR$/src/components/Menu/Menu.js" />
-        <option value="$PROJECT_DIR$/src/context/SearchContext.js" />
-        <option value="$PROJECT_DIR$/src/service/auctionService.js" />
         <option value="$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js" />
-        <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.js" />
+        <option value="$PROJECT_DIR$/src/service/auctionService.js" />
         <option value="$PROJECT_DIR$/src/service/bidService.js" />
+        <option value="$PROJECT_DIR$/src/components/Register/Register.js" />
+        <option value="$PROJECT_DIR$/src/components/Auctions/Auctions.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js" />
       </list>
     </option>
   </component>
@@ -225,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -262,6 +214,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Auctions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-auctart" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-auctart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Intro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-auctart" type="b2602c69:ProjectViewProjectNode" />
@@ -314,7 +273,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,7 +280,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562843931005" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562888464566" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../auctart" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -370,7 +328,7 @@
       <workItem from="1562691315905" duration="1500000" />
       <workItem from="1562695818225" duration="13192000" />
       <workItem from="1562786320431" duration="367000" />
-      <workItem from="1562787790263" duration="12318000" />
+      <workItem from="1562787790263" duration="32456000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/ivankrstev96/auctart&#10;&#10;# Conflicts:&#10;#&#9;react-auctart/.idea/workspace.xml">
       <created>1562613587630</created>
@@ -383,33 +341,33 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170010000" />
+    <option name="totallyTimeSpent" value="177253000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24928367" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21222222" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32795697" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32900432" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32900432" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49888888" visible="true" weight="0.2544053" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="12" sideWeight="0.5011111" side_tool="true" visible="true" weight="0.2544053" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -423,46 +381,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of https://github.com/ivankrstev96/auctart&#10;&#10;# Conflicts:&#10;#&#9;react-auctart/.idea/workspace.xml" />
@@ -534,6 +452,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/browserStorageService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/http.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -541,6 +466,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/authService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -578,6 +510,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/context/AuthContext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -588,6 +530,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -607,11 +556,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="59" column="114" selection-start-line="59" selection-start-column="114" selection-end-line="59" selection-end-column="114" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -622,141 +578,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/OverlayTrigger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="77" column="15" lean-forward="true" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/context/AuthContext.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="193">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="-51">
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UploadAuction/UploadAuction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+        <state relative-caret-position="353">
+          <caret line="163" column="55" selection-start-line="163" selection-start-column="55" selection-end-line="163" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/authService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/browserStorageService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Register/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="208" column="24" lean-forward="true" selection-start-line="208" selection-start-column="24" selection-end-line="208" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#checkValid#0;n#Register#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/userService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/context/SearchContext.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/auctionService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="170">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/bidService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="102">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/userService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Register/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="295" column="60" selection-start-line="295" selection-start-column="15" selection-end-line="295" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Auctions/Auctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlaceBid/PlaceBid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

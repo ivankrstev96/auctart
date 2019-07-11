@@ -5,27 +5,12 @@ import Button from "react-bootstrap/Button";
 import {getHighestBidForAuction} from "../../service/auctionService";
 import {withNotificationContext} from "../../context/NotificationContext";
 import {saveBid} from "../../service/bidService";
+import {withRouter} from "react-router-dom";
 
 class PlaceBid extends React.Component {
     constructor(props, context) {
         super(props, context);
-        const {auction} = props;
-
-        getHighestBidForAuction(auction.id).then((result) => {
-            if (result.status === 204) {
-                this.setState({
-                    highestBidValue: auction.startPrice,
-                    hasBids: false
-                });
-            } else if (result.status === 200) {
-                this.setState({
-                    highestBidValue: result.price,
-                    hasBids: true
-                });
-            }
-        }).catch(() => {
-
-        });
+        this.calcHighestBid();
 
         this.state = {
             show: false,
@@ -34,6 +19,32 @@ class PlaceBid extends React.Component {
             yourBid: null
         };
     }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps !== this.props) {
+            this.calcHighestBid();
+        }
+    }
+
+    calcHighestBid = () => {
+        const {auction} = this.props;
+        getHighestBidForAuction(auction.id).then((result) => {
+            if (result.status === 204) {
+                this.setState({
+                    highestBidValue: auction.startPrice,
+                    hasBids: false
+                });
+            } else if (result.status === 200) {
+                console.log("res: ", result);
+                this.setState({
+                    highestBidValue: result.data.price,
+                    hasBids: true
+                });
+            }
+        }).catch(() => {
+
+        });
+    };
 
     handleClose = () => {
         this.setState({show: false});
@@ -65,6 +76,7 @@ class PlaceBid extends React.Component {
                 level: "success",
                 autoDismiss: 3
             });
+            this.props.updateAuctions();
         }).catch(() => {
             this.props.notificationSystem.current.addNotification({
                 title: "Error",
@@ -78,9 +90,15 @@ class PlaceBid extends React.Component {
     renderModalBody = () => {
         const {auction} = this.props;
         return (
-            <div>
-                <img className="cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
-                <div className="input-group mb-3">
+            <div className="row">
+                <img className="col-12 cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
+
+                <div className="col-12 my-3 mx-1">
+                    <h5>This auction ends on {auction.endDate.slice(0,10)}</h5>
+                    <h4>{this.state.hasBids? "Current highest bid: " + this.state.highestBidValue : "Starting price: " + this.state.highestBidValue} </h4>
+                    <p className="font-italic">{this.state.hasBids? "" : "Be the first to bid on this item!"}</p>
+                </div>
+                <div className="col-6 input-group mx-auto my-3">
                     <input type="number" min={this.state.highestBidValue} onChange={this.onInputChange}
                            className="form-control"
                            placeholder="Place your bid here"/>
@@ -90,7 +108,9 @@ class PlaceBid extends React.Component {
                         </button>
                     </div>
                 </div>
+
             </div>
+
         );
     };
 
@@ -109,7 +129,6 @@ class PlaceBid extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         {this.renderModalBody()}
-
                     </Modal.Body>
                 </Modal>
             </>
@@ -118,4 +137,4 @@ class PlaceBid extends React.Component {
 
 }
 
-export default withNotificationContext(PlaceBid);
+export default withNotificationContext(withRouter(PlaceBid));

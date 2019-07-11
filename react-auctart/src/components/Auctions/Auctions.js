@@ -22,6 +22,7 @@ class Auctions extends React.Component {
     }
 
     updateAuctions = () => {
+        console.log("update");
         const {searchQuery} = this.props;
         getActiveAuctions(searchQuery).then(auctions => {
             this.setState({
@@ -80,7 +81,7 @@ class Auctions extends React.Component {
                     Active until: {auction.endDate.slice(0, 10)}
                 </h5>
                 <div className="float-to-bottom float-right">
-                    <PlaceBid auction={auction}/>
+                    <PlaceBid updateAuctions={this.updateAuctions} auction={auction}/>
                 </div>
             </td>
         );
