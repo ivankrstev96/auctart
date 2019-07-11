@@ -3,9 +3,8 @@ import './PlaceBid.css';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import {getHighestBidForAuction} from "../../service/auctionService";
-import {Promise as saveBid} from "q";
 import {withNotificationContext} from "../../context/NotificationContext";
-
+import {saveBid} from "../../service/bidService";
 
 class PlaceBid extends React.Component {
     constructor(props, context) {
@@ -13,12 +12,12 @@ class PlaceBid extends React.Component {
         const {auction} = props;
 
         getHighestBidForAuction(auction.id).then((result) => {
-            if(result.status === 204) {
+            if (result.status === 204) {
                 this.setState({
                     highestBidValue: auction.startPrice,
                     hasBids: false
                 });
-            } else if(result.status === 200) {
+            } else if (result.status === 200) {
                 this.setState({
                     highestBidValue: result.price,
                     hasBids: true
@@ -46,7 +45,7 @@ class PlaceBid extends React.Component {
 
     onInputChange = (event) => {
         let bid = event.target.value;
-        this.setState( {
+        this.setState({
             yourBid: bid
         })
     };
@@ -60,7 +59,19 @@ class PlaceBid extends React.Component {
         };
         console.log(bid);
         saveBid(bid).then(() => {
-
+            this.props.notificationSystem.current.addNotification({
+                title: "Success",
+                message: "You have successfully bid for " + auction.name,
+                level: "success",
+                autoDismiss: 3
+            });
+        }).catch(() => {
+            this.props.notificationSystem.current.addNotification({
+                title: "Error",
+                message: "Something went wrong",
+                level: "error",
+                autoDismiss: 5
+            });
         });
     };
 
@@ -70,7 +81,8 @@ class PlaceBid extends React.Component {
             <div>
                 <img className="cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
                 <div className="input-group mb-3">
-                    <input type="number" min={this.state.highestBidValue} onChange={this.onInputChange} className="form-control"
+                    <input type="number" min={this.state.highestBidValue} onChange={this.onInputChange}
+                           className="form-control"
                            placeholder="Place your bid here"/>
                     <div className="input-group-append">
                         <button className="btn btn-outline-secondary" onClick={this.handlePlaceBid}>
