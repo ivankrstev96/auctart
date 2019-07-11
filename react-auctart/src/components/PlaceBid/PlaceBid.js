@@ -6,7 +6,9 @@ class PlaceBid extends React.Component {
 
 
     render() {
-        return("");
+        return(
+            <button className="btn btn-outline-secondary">Place bid</button>
+        );
     }
 }
 

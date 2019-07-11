@@ -35,11 +35,12 @@ public class Auction {
     @JoinColumn(name = "user")
     private User user;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "image")
     private Image image;
 
-    public Auction() { }
+    public Auction() {
+    }
 
     public Auction(String name, String author, LocalDateTime startDate,
                    LocalDateTime endDate, Integer startPrice, User user, Image image) {
@@ -51,6 +52,7 @@ public class Auction {
         this.user = user;
         this.image = image;
     }
+
 
     public Long getId() {
         return id;
@@ -107,4 +109,13 @@ public class Auction {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
 }
