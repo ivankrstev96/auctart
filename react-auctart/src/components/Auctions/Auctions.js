@@ -68,7 +68,7 @@ class Auctions extends React.Component {
                     Active until: {auction.endDate.slice(0,10)}
                 </h5>
                 <div className="float-to-bottom float-right">
-                    <PlaceBid/>
+                    <PlaceBid auction={auction}/>
                 </div>
             </td>
         );

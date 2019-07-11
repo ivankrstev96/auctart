@@ -2,8 +2,6 @@ import React from 'react';
 import './PlaceBid.css';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Intro from "../Intro/Intro";
-import Register from "../Register/Register";
 
 
 class PlaceBid extends React.Component {
@@ -23,19 +21,29 @@ class PlaceBid extends React.Component {
         this.setState({ show: true });
     };
 
+    renderModalBody = () => {
+        const {auction} = this.props;
+
+        return (
+            <img className="cropped-image " src={`/api/image/public/${auction.id}`}/>
+        );
+    };
+
     render() {
+        const {auction} = this.props;
         return (
             <>
-                <Button variant="primary" onClick={this.handleShow}>
-                    Launch demo modal
-                </Button>
+                <button className="btn btn-outline-secondary" onClick={this.handleShow}>Place bid</button>
 
                 <Modal size="lg" show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>
+                            <h3 className="d-inline-block">{auction.name}</h3>
+                            <h5 className="d-inline-block pl-2">by {auction.author}</h5>
+                        </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Register></Register>
+                        {this.renderModalBody()}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
