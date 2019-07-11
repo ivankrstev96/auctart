@@ -34,6 +34,7 @@ class App extends Component {
                                 <Route path="/Login" component={Login}/>
                                 <Route path="/Register" component={Register}/>
                                 <Route path="/UploadAuction" component={UploadAuction}/>
+                                <Route path="/PlaceBid" component={PlaceBid}/>
                             </Switch>
                         </Router>
                     </NotificationProvider>
