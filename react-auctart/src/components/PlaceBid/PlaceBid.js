@@ -2,30 +2,66 @@ import React from 'react';
 import './PlaceBid.css';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import {getHighestBidForAuction} from "../../service/auctionService";
 
 
 class PlaceBid extends React.Component {
     constructor(props, context) {
         super(props, context);
+        const {auction} = props;
+
+        getHighestBidForAuction(auction.id).then((result) => {
+            if(result.status === 204) {
+                this.setState({
+                    highestBidValue: auction.startPrice,
+                    hasBids: false
+                });
+            } else if(result.status === 200) {
+                this.setState({
+                    highestBidValue: result.price,
+                    hasBids: true
+                });
+            }
+        }).catch(() => {
+
+        });
 
         this.state = {
             show: false,
+            highestBidValue: null,
+            hasBids: false
         };
     }
 
     handleClose = () => {
-        this.setState({ show: false });
+        this.setState({show: false});
     };
 
     handleShow = () => {
-        this.setState({ show: true });
+        this.setState({show: true});
+    };
+
+    handlePlaceBid = () => {
+        
     };
 
     renderModalBody = () => {
         const {auction} = this.props;
-
         return (
-            <img className="cropped-image " src={`/api/image/public/${auction.id}`}/>
+            <div>
+                <img className="cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
+                <div className="input-group mb-3">
+                    <input type="number" min={this.state.highestBidValue} className="form-control"
+                           placeholder="Place your bid here"/>
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" onClick={this.handlePlaceBid}>
+                            Bid
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
         );
     };
 
@@ -44,19 +80,13 @@ class PlaceBid extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         {this.renderModalBody()}
+
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
                 </Modal>
             </>
         );
     }
+
 }
 
 export default PlaceBid

@@ -8,8 +8,7 @@ export const getActiveAuctions = () => {
 };
 
 export const getHighestBidForAuction = (auctionId) => {
-    return axios.get(`${apiUri}/public/${auctionId}/bid`)
-        .then(response => response.data);
+    return axios.get(`${apiUri}/public/${auctionId}/bid`);
 };
 
 export const saveAuction = (auction) => {
