@@ -1,7 +1,6 @@
 import React from 'react';
 import './PlaceBid.css';
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 import {getHighestBidForAuction} from "../../service/auctionService";
 import {withNotificationContext} from "../../context/NotificationContext";
 import {saveBid} from "../../service/bidService";
@@ -35,20 +34,20 @@ class PlaceBid extends React.Component {
                     hasBids: false
                 });
             } else if (result.status === 200) {
-                console.log("res: ", result);
                 this.setState({
                     highestBidValue: result.data.price,
                     hasBids: true
                 });
             }
         }).catch(() => {
-
+            this.props.notificationSystem.current.addNotification({
+                title: "Error",
+                message: "Something went wrong",
+                level: "error",
+                autoDismiss: 5
+            });
         });
     };
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(prevState.highestBidValue, this.state.highestBidValue);
-    }
 
     handleClose = () => {
         this.setState({show: false});
@@ -72,7 +71,6 @@ class PlaceBid extends React.Component {
             auction: auction.id,
             price: +this.state.yourBid
         };
-        console.log(bid);
         saveBid(bid).then(() => {
             this.props.notificationSystem.current.addNotification({
                 title: "Success",
@@ -95,7 +93,7 @@ class PlaceBid extends React.Component {
         const {auction} = this.props;
         return (
             <div className="row">
-                <img className="col-12 cropped-image mx-auto" src={`/api/image/public/${auction.id}`}/>
+                <img className="col-12 cropped-image mx-auto" alt="auction" src={`/api/image/public/${auction.id}`}/>
 
                 <div className="col-12 my-3 mx-1">
                     <h5>This auction ends on {auction.endDate.slice(0,10)}</h5>

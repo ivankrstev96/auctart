@@ -36,6 +36,13 @@ public class AuctionService {
         return this.repository.findAll().stream().filter(auction -> auction
                 .getEndDate()
                 .isAfter(LocalDateTime.now()))
+                .sorted((y,x)-> {
+                    if(x.getEndDate().isBefore(y.getEndDate()))
+                        return 1;
+                    if(x.getEndDate().isEqual(y.getEndDate()))
+                        return 0;
+                    return -1;
+                })
                 .collect(Collectors.toList());
     }
 
@@ -47,6 +54,13 @@ public class AuctionService {
                         && (auction.getName().toLowerCase().contains(query.toLowerCase())
                         || auction.getAuthor().toLowerCase().contains(query.toLowerCase())
                 ))
+                .sorted((y,x)-> {
+                    if(x.getEndDate().isBefore(y.getEndDate()))
+                        return 1;
+                    if(x.getEndDate().isEqual(y.getEndDate()))
+                        return 0;
+                    return -1;
+                })
                 .collect(Collectors.toList());
     }
 

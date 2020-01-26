@@ -1,5 +1,5 @@
 import React from "react";
-import NotificationSystem, {System} from 'react-notification-system';
+import NotificationSystem from 'react-notification-system';
 
 
 const state = {

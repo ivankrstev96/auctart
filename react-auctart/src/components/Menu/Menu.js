@@ -55,7 +55,7 @@ class Menu extends React.Component {
 
                             <div className="dropleft">
                                 <Link to="#" className="" data-toggle="dropdown">
-                                    <img src={defaultuserimg} className="img-fluid rounded user-img"/>
+                                    <img src={defaultuserimg}  alt="user"className="img-fluid rounded user-img"/>
                                 </Link>
 
                                 <div className="dropdown-menu">

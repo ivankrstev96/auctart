@@ -5,6 +5,7 @@ import PlaceBid from "../PlaceBid/PlaceBid"
 import {getActiveAuctions} from "../../service/auctionService";
 import {withSearchContext} from "../../context/SearchContext";
 import debounce from "lodash.debounce"
+import {withNotificationContext} from "../../context/NotificationContext";
 
 class Auctions extends React.Component {
     constructor(props) {
@@ -22,7 +23,6 @@ class Auctions extends React.Component {
     }
 
     updateAuctions = () => {
-        console.log("update");
         const {searchQuery} = this.props;
         getActiveAuctions(searchQuery).then(auctions => {
             this.setState({
@@ -64,7 +64,7 @@ class Auctions extends React.Component {
         const index = auctions.indexOf(auction);
         children.push(
             <td key={"td1_" + index} className="td-w-img d-table-cell align-middle">
-                <img className="cropped-image " src={`/api/image/public/${auction.id}`}/>
+                <img className="cropped-image" alt="auction" src={`/api/image/public/${auction.id}`}/>
             </td>
         );
         children.push(
@@ -106,37 +106,36 @@ class Auctions extends React.Component {
             pageNumbers.push(i);
         }
 
-        const renderPageNumbers = pageNumbers.map(number => {
-            let returnCode = [];
-            returnCode.push(
-                <li
-                    className="page-item"
-                    key={"pg_" + number}
-                    onClick={this.handlePageClick}
-                >
-                    <button id={number} className="page-link text-dark">{number}</button>
+        const renderPageNumbers = pageNumbers
+            .filter(number => {
+                let currentPage = this.state.currentPage;
+                const lastPage = Math.ceil(auctions.length / auctionsPerPage);
 
-                </li>
-            );
-
-            let currentPage = this.state.currentPage;
-            const lastPage = Math.ceil(auctions.length / auctionsPerPage);
-
-            if (currentPage == 1) {
-                if (number == 1 || number == 2 || number == 3) {
-                    return returnCode;
+                if (currentPage === 1) {
+                    if (number === 1 || number === 2 || number === 3) {
+                        return true;
+                    }
+                } else if (currentPage === lastPage) {
+                    if (number === lastPage - 2 || number === lastPage - 1 || number === lastPage) {
+                        return true;
+                    }
                 }
-            } else if (currentPage == lastPage) {
-                if (number == lastPage - 2 || number == lastPage - 1 || number == lastPage) {
-                    return returnCode;
-                }
-            } else {
-                if (number == currentPage - 1 || number == currentPage || number == currentPage + 1) {
-                    return returnCode;
-                }
-            }
+                return number === currentPage - 1 || number === currentPage || number === currentPage + 1;
+            })
+            .map(number => {
+                let returnCode = [];
+                returnCode.push(
+                    <li
+                        className="page-item"
+                        key={"pg_" + number}
+                        onClick={this.handlePageClick}
+                    >
+                        <button id={number} className="page-link text-dark">{number}</button>
 
-        });
+                    </li>
+                );
+                return returnCode;
+            });
 
         return (
             <div className="container">
@@ -181,4 +180,4 @@ class Auctions extends React.Component {
 }
 
 
-export default withSearchContext(Auctions);
+export default withNotificationContext(withSearchContext(Auctions));

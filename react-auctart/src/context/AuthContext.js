@@ -1,7 +1,7 @@
 import React from "react";
 import {authenticateUser} from "../service/authService";
 import {clearAccessToken, getAccessToken, setAccessToken} from "../service/browserStorageService";
-import {getAuthenticatedUser, getUserByUsername} from "../service/userService";
+import {getAuthenticatedUser} from "../service/userService";
 
 const state = {
     login: () => {
